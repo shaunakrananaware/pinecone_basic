@@ -17,3 +17,12 @@ index.upsert([
     ("D", [0.4, 0.4, 0.4, 0.4]),
     ("E", [0.5, 0.5, 0.5, 0.5])
 ])
+
+# query index
+index = pinecone.Index("firstindex")
+print("Query Result: ", 
+index.query(
+    vector = [0.3, 0.3, 0.3, 0.3], 
+    top_k = 1, 
+    include_values = True
+))
