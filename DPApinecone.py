@@ -1,15 +1,15 @@
 import pinecone
-pinecone.init(api_key="<ENTER_YOUR_API_KEY_HERE>",
+pinecone.init(api_key="<YOUR_API_KEY>",
               environment="us-west4-gcp-free")
 # create index
-pinecone.create_index("firstindex", dimension=4, metric="euclidean")
+pinecone.create_index("<YOUR_INDEX_NAME>", dimension=4, metric="euclidean")
 print("INDEXS: ", pinecone.list_indexes(), "\n\n")
 
 # delete index
-pinecone.delete_index("firstindex")
+pinecone.delete_index("<YOUR_INDEX_NAME>")
 
 # insert data into index
-index = pinecone.Index("firstindex")
+index = pinecone.Index("<YOUR_INDEX_NAME>")
 index.upsert([
     ("A", [0.1, 0.1, 0.1, 0.1]),
     ("B", [0.2, 0.2, 0.2, 0.2]),
@@ -19,7 +19,7 @@ index.upsert([
 ])
 
 # query index
-index = pinecone.Index("firstindex")
+index = pinecone.Index("<YOUR_INDEX_NAME>")
 print("Query Result: ", 
 index.query(
     vector = [0.3, 0.3, 0.3, 0.3], 
