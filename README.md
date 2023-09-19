@@ -24,30 +24,30 @@ __Initialize the Pinecone environment :__
 ```python
 import pinecone
 
-pinecone.init(api_key="YOUR_API_KEY")
+pinecone.init(api_key="<YOUR_API_KEY>")
 ```
 
 ### Create an index
 To create an index in the vector database, you can follow the following example:
 ```python
-pinecone.create_index(index_name="YOUR_INDEX_NAME")
+pinecone.create_index(index_name="<YOUR_INDEX_NAME>")
 ```
 
 ### Inserting Data
 You can insert vector data into a Pinecone index using the upsert method. Here's an example of inserting a vector with an associated ID into the index:
 ```python
-pinecone.upsert(index_name="YOUR_INDEX_NAME", data=[("<VECTOR_ID>", [<DATA_ARRAY>])])
+pinecone.upsert(index_name="<YOUR_INDEX_NAME>", data=[("<VECTOR_ID>", [<DATA_ARRAY>])])
 ```
 ### Querying Data
 You can perform similarity searches on your data in Pinecone using the query method. Here's an example of querying the index for similar vectors:
 ```python
-results = pinecone.query(index_name="YOUR_INDEX_NAME", query_vector=[0.1, 0.2, 0.3], top_k=5)
+results = pinecone.query(index_name="<YOUR_INDEX_NAME>", query_vector=[0.1, 0.2, 0.3], top_k=5)
 ```
 
 ### Deleting an Index
 To delete an index, use the delete_index method:
 ```python
-pinecone.delete_index(index_name="YOUR_INDEX_NAME")
+pinecone.delete_index(index_name="<YOUR_INDEX_NAME>")
 ```
 ## Contributing
 Contributions are welcome! If you have any improvements or additional features you'd like to add, please open an issue or submit a pull request.
